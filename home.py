@@ -46,7 +46,7 @@ st_lottie(
     speed=1,
     reverse=False,
     loop=True,
-    quality="low", # medium ; high
+    quality="high", # medium ; high
     #renderer="svg", # canvas
     height=300,
     width=300,
@@ -65,8 +65,8 @@ if uploaded_image is not None:
     show_img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     st.image(show_img)
     if operation=="Edge detection":
-        weak = st.sidebar.slider("weak",min_value=0.0,max_value=5.0,value=1.0,step=0.2)
-        canny = Canny_detector(img,weak_th=weak)
+        strength = st.sidebar.slider("weak",min_value=0.0,max_value=1.0,value=0.0,step=0.002)
+        canny = Canny_detector(img,weak_th=strength)
         st.image(canny,clamp=True,channels="GRAY")
         #canny = cv2.cvtColor(canny,cv2.COLOR_GRAY2RGB)
         canny_down = Image.fromarray(canny)

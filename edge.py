@@ -5,32 +5,26 @@ import cv2
 
 def Canny_detector(img, weak_th=2, strong_th=2):
 
-    # conversion of image to grayscale
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # Noise reduction step
+
     img = cv2.GaussianBlur(img, (5, 5), 1.4)
 
-    # Calculating the gradients
     gx = cv2.Sobel(np.float32(img), cv2.CV_64F, 1, 0, 3)
     gy = cv2.Sobel(np.float32(img), cv2.CV_64F, 0, 1, 3)
 
-    # Conversion of Cartesian coordinates to polar
+ 
     mag, ang = cv2.cartToPolar(gx, gy, angleInDegrees=True)
 
-    # setting the minimum and maximum thresholds
-    # for double thresholding
     mag_max = np.max(mag)
     if not weak_th:
         weak_th = mag_max * 0.1
     if not strong_th:
         strong_th = mag_max * 0.5
 
-    # getting the dimensions of the input image
     height, width = img.shape
 
-    # Looping through every pixel of the grayscale
-    # image
+
     for i_x in range(width):
         for i_y in range(height):
 
@@ -87,10 +81,6 @@ def Canny_detector(img, weak_th=2, strong_th=2):
 
             if grad_mag < weak_th:
                 mag[i_y, i_x] = 0
-            elif strong_th > grad_mag >= weak_th:
-                ids[i_y, i_x] = 1
-            else:
-                ids[i_y, i_x] = 2
 
     # finally returning the magnitude of
     # gradients of edges
