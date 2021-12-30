@@ -1,7 +1,7 @@
-autopep8
-Babel
 base58
+io
 numpy
+pybase64
 opencv-python-headless
 matplotlib
 pep8
