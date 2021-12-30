@@ -10,4 +10,4 @@ scikit-image
 scipy
 streamlit==1.2.0
 streamlit-lottie==0.0.3
-
+requests
