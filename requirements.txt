@@ -1,4 +1,3 @@
-base58
 io
 numpy
 pybase64
