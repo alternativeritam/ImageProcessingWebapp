@@ -7,7 +7,6 @@ from edge import Canny_detector
 from region import Kmeans_cluster
 from PIL import ImageEnhance
 from PIL import ImageColor
-from bokeh.models.widgets import ColorPicker
 from color_filter import Color_Filter
 from Image_enhance import apply_brightness_contrast,hsv_control
 from shapes import detect_shape
