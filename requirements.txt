@@ -1,5 +1,3 @@
-alabaster
-io
 numpy
 pybase64
 opencv-python-headless
