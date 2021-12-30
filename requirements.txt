@@ -1,14 +1,14 @@
-autopep8==1.6.0
-Babel==2.9.1
-base58==2.1.1
-opencv==4.5.4.60
-packaging==21.3
-pandas==1.3.4
-pep8==1.7.1
-pillow==8.4.0
-scikit-image==0.18.3
-scipy==1.7.2
-seaborn==0.11.2
+autopep8
+Babel
+base58
+numpy
+opencv-python-headless
+packaging
+pandas
+pep8
+pillow
+scikit-image
+scipy
 streamlit==1.2.0
 streamlit-lottie==0.0.3
 
