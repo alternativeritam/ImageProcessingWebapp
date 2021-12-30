@@ -3,8 +3,7 @@ Babel
 base58
 numpy
 opencv-python-headless
-packaging
-pandas
+matplotlib
 pep8
 pillow
 scikit-image
